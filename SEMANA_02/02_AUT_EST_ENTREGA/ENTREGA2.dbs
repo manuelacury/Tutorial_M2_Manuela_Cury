@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Sqlite" id="Project-cb8" database="Sqlite" >
+	<schema name="Default" >
+		<table name="Experiencias" >
+			<column name="ID_EXPERIENCIAS" type="INTEGER" jt="4" mandatory="y" />
+			<column name="NOME DA EMPRESA" type="TEXT" jt="-1" mandatory="y" />
+			<column name="CARGO" type="TEXT" jt="-1" mandatory="y" />
+			<column name="DURACAO" type="TEXT" jt="-1" mandatory="y" />
+			<column name="DESCRICAO" type="TEXT" jt="-1" mandatory="y" />
+			<column name="ID_PESSOA" type="INTEGER" jt="4" />
+			<index name="pk_Experiencias" unique="PRIMARY_KEY" >
+				<column name="ID_EXPERIENCIAS" />
+			</index>
+			<fk name="fk_Experiencias" to_schema="Default" to_table="Pessoa" >
+				<fk_column name="ID_PESSOA" pk="ID_PESSOA" />
+			</fk>
+		</table>
+		<table name="Formacao" >
+			<column name="ID_FORMACAO" type="INTEGER" jt="4" mandatory="y" />
+			<column name="CURSO" type="TEXT" jt="-1" mandatory="y" />
+			<column name="DURACAO" type="TEXT" jt="-1" mandatory="y" />
+			<column name="DESCRICAO" type="TEXT" jt="-1" mandatory="y" />
+			<column name="ID_PESSOA" type="INTEGER" jt="4" />
+			<index name="pk_Formacao " unique="PRIMARY_KEY" >
+				<column name="ID_FORMACAO" />
+			</index>
+			<fk name="fk_Formacao" to_schema="Default" to_table="Pessoa" >
+				<fk_column name="ID_PESSOA" pk="ID_PESSOA" />
+			</fk>
+		</table>
+		<table name="Habilidades" >
+			<column name="ID_HABILIDADE" type="INTEGER" jt="4" mandatory="y" />
+			<column name="TIPO" type="TEXT" jt="-1" mandatory="y" />
+			<column name="NIVEL" type="TEXT" jt="-1" mandatory="y" />
+			<column name="ID_PESSOA" type="INTEGER" jt="4" />
+			<index name="pk_Habilidades" unique="PRIMARY_KEY" >
+				<column name="ID_HABILIDADE" />
+			</index>
+			<fk name="fk_Habilidades" to_schema="Default" to_table="Pessoa" >
+				<fk_column name="ID_PESSOA" pk="ID_PESSOA" />
+			</fk>
+		</table>
+		<table name="Personalidade" >
+			<column name="ID_PERSONALIDADE" type="INTEGER" jt="4" mandatory="y" />
+			<column name="TIPO" type="TEXT" jt="-1" mandatory="y" />
+			<column name="NIVEL" type="TEXT" jt="-1" mandatory="y" />
+			<column name="ID_PESSOA" type="INTEGER" jt="4" />
+			<index name="pk_Personalidade" unique="PRIMARY_KEY" >
+				<column name="ID_PERSONALIDADE" />
+			</index>
+			<fk name="fk_Personalidade" to_schema="Default" to_table="Pessoa" >
+				<fk_column name="ID_PESSOA" pk="ID_PESSOA" />
+			</fk>
+		</table>
+		<table name="Pessoa" >
+			<column name="ID_PESSOA" type="INTEGER" jt="4" mandatory="y" />
+			<column name="NOME" type="TEXT" jt="-1" mandatory="y" />
+			<column name="TELEFONE" type="TEXT" jt="-1" mandatory="y" />
+			<column name="EMAIL" type="TEXT" jt="-1" mandatory="y" />
+			<column name="ENDERECO" type="TEXT" jt="-1" mandatory="y" />
+			<column name="CARGO" type="TEXT" jt="-1" />
+			<index name="pk_Pessoa" unique="PRIMARY_KEY" >
+				<column name="ID_PESSOA" />
+			</index>
+		</table>
+		<table name="Realizacoes" >
+			<column name="ID_REALIZACOES" type="INTEGER" jt="4" mandatory="y" />
+			<column name="NOME" type="TEXT" jt="-1" mandatory="y" />
+			<column name="DATA" type="TEXT" jt="-1" mandatory="y" />
+			<column name="DESCRICAO" type="TEXT" jt="-1" mandatory="y" />
+			<column name="ID_PESSOA" type="INTEGER" jt="4" />
+			<index name="pk_Realizacoes" unique="PRIMARY_KEY" >
+				<column name="ID_REALIZACOES" />
+			</index>
+			<fk name="fk_Realizacoes" to_schema="Default" to_table="Pessoa" >
+				<fk_column name="ID_PESSOA" pk="ID_PESSOA" />
+			</fk>
+		</table>
+	</schema>
+	<connector name="Sqlite" database="Sqlite" driver_class="org.sqlite.JDBC" driver_jar="sqlite-jdbc-3.40.0.0.jar" driver_desc="Standard" host="localhost" port="7210" instance="/Users/manuelacury/Desktop/Inteli/repositorio2/Tutorial_M2_Manuela_Cury/SEMANA_02/02_AUT_EST_ENTREGA/modelofísico.db" useSystemProxy="false" />
+	<layout name="Main Layout" id="Layout-157" show_relation="columns" >
+		<entity schema="Default" name="Experiencias" color="C1D8EE" x="96" y="64" />
+		<entity schema="Default" name="Formacao" color="3986C1" x="464" y="48" />
+		<entity schema="Default" name="Habilidades" color="C1D8EE" x="576" y="368" />
+		<entity schema="Default" name="Personalidade" color="C1D8EE" x="272" y="528" />
+		<entity schema="Default" name="Pessoa" color="C1D8EE" x="320" y="272" />
+		<entity schema="Default" name="Realizacoes" color="C1D8EE" x="48" y="336" />
+	</layout>
+</project>
